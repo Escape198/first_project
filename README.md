@@ -9,7 +9,7 @@ Activate the venv
 >env\scripts\activate.bat
 
 
-Go to the project folder
+Open the project folder
 >cd project
 
 
