@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Departments
+{% endblock%}
+sd
+{% block page %}
+{% for department in departments %}
+  <div>
+    <h2>{{ department.name }}</h2>
+      <a href="{% url 'department-detail' department_id=department.id %}">{{ department.name }}</a>
+    <div>{{ department.description }}</div>
+  </div>
+{% endfor %}
+{% endblock %}

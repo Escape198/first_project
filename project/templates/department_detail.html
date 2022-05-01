@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+  Department {{ department.name }}
+{% endblock%}
+{% block page %}
+<a href="{% url 'departments' %}">Departments</a>
+    <div>
+      <h2>{{ department.name }}</h2>
+      <div>{{ department.description }}</div>
+    </div>
+{% endblock %}

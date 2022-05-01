@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="list-group">
+
+        <span class="text-uppercase"></span>
+        <a href="{% url 'home' %}"
+        class="list-group-item {% if request.path == home %} active {% endif %}">Home page</a>
+
+        <span class="text-uppercase"></span>
+        <a href="{% url 'departments' %}"
+        class="list-group-item {% if request.path == department %} active {% endif %}">Departments</a>
+
+        <span class="text-uppercase"></span>
+        <a href="{% url 'members' %}"
+        class="list-group-item {% if request.path == member %} active {% endif %}">Members</a>
+
+        <span class="text-uppercase"></span>
+        <a href="{% url 'form' %}"
+        class="list-group-item {% if request.path == feedback %} active {% endif %}">Feedback</a>
+
+      </div>
+
+      </div>
+      <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 content">
+        {% block page %}{% endblock %}
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-fixed-top .navbar-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="https://vk.com">VK-test</a>
+          </div>
+          <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                  <li class="active"><a href="{% url 'departments' %}">Department</a></li>
+                  <li><a href="{% url 'members' %}">Members</a></li>
+                  <li><a href="{% url 'form' %}">Feedback</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <p>
+      <strong>Address: </strong>Suðurgata, 41, Рейкьявик, Исландия <br>
+      <strong>Phone: </strong> +7(999)8303814 <br>
+      <strong>Email: </strong>r.kirzhanov@albato.ru <br>
+  </p>
+  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A933ea6ad7d37c0e6d181bb01bf0e5d3e012cd58b8b0e957cfd86fc156d507af5&amp;width=100%25&amp;height=374&amp;lang=ru_RU&amp;scroll=true"></script>
+
+</body>
+</html>

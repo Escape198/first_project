@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Employee {{ member.name }}
+{% endblock%}
+
+{% block page %}
+<a href="{% url 'members' %}">Members</a>
+    <div>
+      <h2>{{ member.name }}</h2>
+      <div>{{ member.description }}</div>
+      <div>{{ member.phone }}</div>
+      {% if member.photo %}
+        <img src="{{ member.photo.url }}" alt="{{ member.name }}">
+      {% endif %}
+    </div>
+    <h2>Feedback</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_ul }}
+      <input type="submit" value='Send'>
+    {% if sent %}
+      <h2>Thanks, Feedback sent! :) </h2>
+    {% endif %}
+    </form>
+{% endblock %}

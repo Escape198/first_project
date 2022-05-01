@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Members
+{% endblock%}
+
+{% block page %}
+{% for member in members %}
+  <div>
+    <h2>{{ member.name }}</h2>
+      <a href="{% url 'member-detail' member_id=member.id %}">{{ member.name }}</a>
+    <div>{{ member.description }}</div>
+    <div>{{ member.phone }}</div>
+  </div>
+{% endfor %}
+{% endblock %}
