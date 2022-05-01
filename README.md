@@ -1,10 +1,10 @@
 Basic application with pages
 
 
-python -m venv env
+<python -m venv env>
 
-env\scripts\activate.bat
+<env\scripts\activate.bat>
 
-pip install -r requirements.txt
+<pip install -r requirements.txt>
 
-cd project
+<cd project>
