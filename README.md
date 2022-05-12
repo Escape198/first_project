@@ -1,4 +1,4 @@
-## Basic application with pages 🍪
+## Basic Django application with pages 🍪
 
 
 Create a virtual environment
